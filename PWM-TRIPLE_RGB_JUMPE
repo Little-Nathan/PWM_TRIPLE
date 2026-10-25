@@ -1,0 +1,59 @@
+ /*
+   Nathan O`Neil O`Brien
+   It`s another self creation, or else another improvement of those profitable Arduino_CC_ Sketches
+   and tutorials; supported by what was learned there at State College Mayor Francis Offspring Tower.
+   */
+ 
+
+  const int LED1 =11; // RED (X)
+  const int LED2 = 9;   //YELLOW (Y)
+  const int LED3 = 3;  // GREEN (Z)
+
+    int x = 0; 
+     int y = 0;
+      int z = 0;
+ 
+ void setup()             
+ {      
+Serial.begin(9600);
+  pinMode(LED1, OUTPUT); // It does set_up the red variable likewise an exit door
+  pinMode(LED2, OUTPUT); // It does set_up the green variable likewise an exit door
+  pinMode(LED3, OUTPUT); // It does set_up the blue variable likewise an exit door;
+ }
+
+void loop()          
+  {                 // o loop é executado continuamente
+  int x = 0; 
+      int y = 0;
+        int z = 0;
+
+    for (x = 0; x <= 255; x+=3) 
+    for (y = 0; y <= 255; y+=15) 
+    for (z = 0; z <= 255; z+=25) 
+    {
+        analogWrite(LED1, x);
+        analogWrite(LED2, y);
+        analogWrite(LED3, z);
+              Serial.println(x);        
+              Serial.println(y);
+              Serial.println(z);
+              delay(0.032);
+              }  
+        
+        
+    for (x = 255; x >= 0; x-=25) 
+    for (y = 255; y >= 0; y-=15) 
+    for (z = 255; z >= 0; z-=3) 
+    {  
+          analogWrite(LED1, x);
+          analogWrite(LED2, y);
+          analogWrite(LED3, z);
+              Serial.println(x);
+              Serial.println(y);
+              Serial.println(z);
+              delay(0.032);
+              }
+            }
+  
+  
+     
